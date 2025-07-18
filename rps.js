@@ -9,7 +9,17 @@ function getComputerChoice() {
     console.log(choices[computerChoice]);
 }
 getComputerChoice()
+
+
 // 2. Get user's choice (prompt user for input).
+function getHumanChoice() {
+    let choice = prompt('Which do you choose? Rock, Paper, or Scissors?');
+    
+    console.log(choice);
+}
+getHumanChoice();
+
+
 // 3. Compare choices
 // 4. Determine winner based on the rules:
 // 5. Display the result (who won, or if it's a tie).
