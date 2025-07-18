@@ -21,8 +21,8 @@ function getHumanChoice() {
 }
 
 // 3. Compare choices
-
 function compareChoices (humanChoice, computerChoice) {
+    // 4. Determine winner based on the rules:
     if (humanChoice === computerChoice) {
         console.log("It's a tie!");
         return "tie";
@@ -35,17 +35,14 @@ function compareChoices (humanChoice, computerChoice) {
         console.log("Computer wins!");
         return "computer";
     }
-    // 4. Determine winner based on the rules:
-    // rock > scissors
-    // scissors > paper
-    // paper > rock
-    // is scissors > rock : no
-    // is paper > scissors : no
-    // is rock > scissors : yes
 }
 
 function playRound () {
     // code here.
-    // 5. Display the result (who won, or if it's a tie).
+    // 5. Run the game
+    const computerChoice = getComputerChoice();
+    const humanChoice = getHumanChoice();
+    const winner = compareChoices(humanChoice, computerChoice);
+    console.log(`Round ${round}: ${winner} wins!`);
 }
 
