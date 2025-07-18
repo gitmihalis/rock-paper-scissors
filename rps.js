@@ -1,4 +1,4 @@
-console.log("Play Rock, Paper, Scissors!");
+console.log("Let's play Rock, Paper, Scissors!");
 
 // 1. Get computer's choice (randomly select between rock, paper, scissors).
 const round = 1;
@@ -20,7 +20,7 @@ function getHumanChoice() {
     return choice.toLowerCase();
 }
 
-// 3. Compare choices
+// 3. Compare human vs. computer's choices
 function compareChoices (humanChoice, computerChoice) {
     // 4. Determine winner based on the rules:
     if (humanChoice === computerChoice) {
@@ -38,7 +38,6 @@ function compareChoices (humanChoice, computerChoice) {
 }
 
 function playRound () {
-    // code here.
     // 5. Run the game
     const computerChoice = getComputerChoice();
     const humanChoice = getHumanChoice();
