@@ -1,11 +1,12 @@
 console.log("Rock, Paper, Scissors Game");
 
 // 1. Get computer's choice (randomly select between rock, paper, scissors).
+const choices = ['rock', 'paper', 'scissors'];
+
 function getComputerChoice() {
-    let choices = ['rock', 'paper', 'scissors'];
     let computerChoice = Math.floor(Math.random() * 3);
 
-    console.log(computerChoice);
+    console.log(choices[computerChoice]);
 }
 getComputerChoice()
 // 2. Get user's choice (prompt user for input).
