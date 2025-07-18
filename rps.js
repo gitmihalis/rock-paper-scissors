@@ -1,14 +1,16 @@
 console.log("Let's play Rock, Paper, Scissors!");
 
 // 1. Get computer's choice (randomly select between rock, paper, scissors).
-const round = 1;
+let round = 1;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
-    const choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = Math.floor(Math.random() * 3);
+    const randomNumber = Math.floor(Math.random() * 3);
+    const computerChoice = ['rock', 'paper', 'scissors'][randomNumber];
     console.log(`Computer chose: ${computerChoice}`);
 
-    return choices[computerChoice].toLowerCase();
+    return computerChoice;;
 }
 
 
@@ -43,5 +45,13 @@ function playRound () {
     const humanChoice = getHumanChoice();
     const winner = compareChoices(humanChoice, computerChoice);
     console.log(`Round ${round}: ${winner} wins!`);
+    if (winner === "human") {
+        humanScore++;
+    }
+    else if (winner === "computer") {
+        computerScore++;
+    }
+    round++;
+    console.log(`Scores - You: ${humanScore}, Computer: ${computerScore}`);
 }
 
