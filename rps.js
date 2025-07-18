@@ -23,8 +23,17 @@ function getHumanChoice() {
 // 3. Compare choices
 
 function compareChoices (humanChoice, computerChoice) {
-    switch (humanChoice, computerChoice) {
-        case( humanChoice )       
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+        return "tie";
+    } else if ((humanChoice === 'rock' && computerChoice === 'scissors') ||
+               (humanChoice === 'scissors' && computerChoice === 'paper') ||
+               (humanChoice === 'paper' && computerChoice === 'rock')) {
+        console.log("You win!");
+        return "human";
+    } else {
+        console.log("Computer wins!");
+        return "computer";
     }
     // 4. Determine winner based on the rules:
     // rock > scissors
