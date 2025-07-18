@@ -41,8 +41,8 @@ function compareChoices (humanChoice, computerChoice) {
 
 function playRound () {
     // 5. Run the game
-    const computerChoice = getComputerChoice();
     const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
     const winner = compareChoices(humanChoice, computerChoice);
     console.log(`Round ${round}: ${winner} wins!`);
     if (winner === "human") {
@@ -53,5 +53,37 @@ function playRound () {
     }
     round++;
     console.log(`Scores - You: ${humanScore}, Computer: ${computerScore}`);
+}
+
+function playGame() {
+    // 6. Play 5 rounds
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
+
+    // 7. Determine overall winner
+    if (humanScore > computerScore) {
+        console.log("Congratulations! You are the overall winner!");
+    } else if (computerScore > humanScore) {
+        console.log("The computer is the overall winner!");
+    } else {
+        console.log("It's an overall tie!");
+    }
+}
+
+playGame();
+// 8. End the game
+console.log("Game over! Thanks for playing!");
+// --- IGNORE ---
+// 9. Ask if the user wants to play again
+let playAgain = prompt("Do you want to play again? (yes/no)").toLowerCase();
+if (playAgain === 'yes') {
+    round = 1;
+    humanScore = 0;
+    computerScore = 0;
+    playGame();
+}
+else {
+    console.log("Thanks for playing! Goodbye!");
 }
 
