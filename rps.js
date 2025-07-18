@@ -10,7 +10,7 @@ function getComputerChoice() {
     const computerChoice = ['rock', 'paper', 'scissors'][randomNumber];
     console.log(`Computer chose: ${computerChoice}`);
 
-    return computerChoice;;
+    return computerChoice;
 }
 
 
@@ -69,21 +69,21 @@ function playGame() {
     } else {
         console.log("It's an overall tie!");
     }
+
+    // 9. Ask if the user wants to play again
+    let playAgain = prompt("Do you want to play again? (yes/no)").toLowerCase();
+    if (playAgain === 'yes') {
+        round = 1;
+        humanScore = 0;
+        computerScore = 0;
+        playGame();
+    }
+    else {
+        console.log("Thanks for playing! Goodbye!");
+    }
 }
 
 playGame();
-// 8. End the game
-console.log("Game over! Thanks for playing!");
-// --- IGNORE ---
-// 9. Ask if the user wants to play again
-let playAgain = prompt("Do you want to play again? (yes/no)").toLowerCase();
-if (playAgain === 'yes') {
-    round = 1;
-    humanScore = 0;
-    computerScore = 0;
-    playGame();
-}
-else {
-    console.log("Thanks for playing! Goodbye!");
-}
+
+
 
